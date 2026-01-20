@@ -11,8 +11,8 @@ export const About = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-amber-600/10 to-orange-600/10 blur-3xl rounded-3xl"></div>
             <div className="relative bg-slate-800/40 backdrop-blur-sm p-8 rounded-3xl border border-slate-700/30">
               <div className="flex items-center gap-6 mb-6">
-                <Avatar className="w-20 h-20 border-2 border-amber-400/30">
-                  <AvatarImage src="/placeholder.svg" alt="BZIZ Imad" />
+                <Avatar className="w-24 h-24 border-2 border-amber-400/30">
+                  <AvatarImage src="/assets/images/prof.jpeg" alt="BZIZ Imad" className="object-cover" />
                   <AvatarFallback className="bg-gradient-to-r from-amber-600 to-orange-600 text-white text-xl font-bold">
                     BI
                   </AvatarFallback>

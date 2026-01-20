@@ -4,20 +4,44 @@ import { Award, ExternalLink, Calendar } from 'lucide-react';
 export const Certifications = () => {
   const certifications = [
     {
-      title: "Oracle Cloud Infrastructure (OCI) AI Foundations Associate",
+      title: "OCI AI Foundations Associate",
       issuer: "Oracle",
       date: "2025",
       status: "Completed",
-      description: "Certification in AI foundations on OCI cloud infrastructure.",
-      skills: ["AI Foundations", "Oracle Cloud", "Machine Learning", "Cloud Computing"]
+      description: "Certification validant les connaissances fondamentales en IA et services cloud OCI.",
+      skills: ["AI Foundations", "OCI", "Machine Learning"]
     },
     {
-      title: "IBM Data Engineering Professional Certificate",
+      title: "Data Analysis & Visualisation",
+      issuer: "Udemy",
+      date: "2024",
+      status: "Completed",
+      description: "Maîtrise de l'analyse exploratoire des données et des techniques de visualisation avancées.",
+      skills: ["Power BI", "Python", "Tableau", "Data Storytelling"]
+    },
+    {
+      title: "IBM AI Engineering Professional",
       issuer: "IBM",
       date: "En cours",
       status: "In Progress",
-      description: "Professional certification covering the complete data engineering lifecycle.",
-      skills: ["Data Engineering", "ETL", "Big Data", "Databases", "Python", "SQL"]
+      description: "Parcours complet sur l'ingénierie des systèmes d'IA, du Deep Learning au déploiement MLOps.",
+      skills: ["DL", "Computer Vision", "NLP", "PyTorch", "TensorFlow"]
+    },
+    {
+      title: "Google Cloud Certified Data Engineer",
+      issuer: "Udemy / Google Cloud",
+      date: "En cours",
+      status: "In Progress",
+      description: "Préparation à la certification Google Cloud Data Engineer (BigQuery, Dataflow, Dataproc).",
+      skills: ["GCP", "Big Data", "Data Engineering", "Cloud Architecture"]
+    },
+    {
+      title: "Deep Learning MiniCamp",
+      issuer: "Udemy",
+      date: "2024",
+      status: "Completed",
+      description: "Formation intensive sur les architectures de réseaux de neurones profonds et leurs applications.",
+      skills: ["Neural Networks", "Deep Learning", "CNN", "RNN"]
     }
   ];
 
@@ -45,8 +69,8 @@ export const Certifications = () => {
                 <div className="flex items-start justify-between mb-4">
                   <Award className={`w-8 h-8 ${cert.status === 'Completed' ? 'text-emerald-400' : 'text-amber-400'}`} />
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${cert.status === 'Completed'
-                      ? 'bg-emerald-600/20 text-emerald-300 border border-emerald-400/30'
-                      : 'bg-amber-600/20 text-amber-300 border border-amber-400/30'
+                    ? 'bg-emerald-600/20 text-emerald-300 border border-emerald-400/30'
+                    : 'bg-amber-600/20 text-amber-300 border border-amber-400/30'
                     }`}>
                     {cert.status}
                   </span>

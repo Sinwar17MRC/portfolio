@@ -9,8 +9,8 @@ export const Experience = () => {
       location: "Casablanca",
       period: "Juillet 2025 – Septembre 2025",
       type: "Internship",
-      description: "Conception et développement d’un pipeline NL2SQL complet : Mise en place d’une architecture Graph RAG orchestrée via LangChain. Ingénierie de données et bases vectorielles (ChromaDB) pour l'enrichissement sémantique.",
-      skills: ["Graph RAG", "LangChain", "LLMs", "ChromaDB", "Python"],
+      description: "Conception d'un pipeline NL2SQL basé sur une architecture Graph RAG. Modélisation de schémas DB en graphes pondérés avec détection de communautés (Louvain). Mise en place d'un 'RAGService' hybride et d'un 'Security Gate' (sqlparse) pour la validation des requêtes.",
+      skills: ["Graph RAG", "Louvain", "ChromaDB", "sqlparse", "LangChain", "LLMs"],
       status: "previous"
     },
     {
@@ -19,8 +19,8 @@ export const Experience = () => {
       location: "Rabat",
       period: "Juin 2024 – Juillet 2024",
       type: "Internship",
-      description: "Développement d’un module de Machine Learning (XGBoost) pour anticiper les départs des employés. Participation à la migration de bases de données (SQL Server vers Oracle) pour la plateforme MASIRH.",
-      skills: ["XGBoost", "Pandas", "Oracle", "SQL Server", "Machine Learning"],
+      description: "Développement d’un modèle XGBoost pour prédire le turnover des employés. Construction d’un pipeline de données complet avec Python et SQL. Participation à la migration de bases de données critiques vers Oracle.",
+      skills: ["XGBoost", "Python", "SQL", "Pandas", "Scikit-learn", "Oracle"],
       status: "previous"
     }
   ];

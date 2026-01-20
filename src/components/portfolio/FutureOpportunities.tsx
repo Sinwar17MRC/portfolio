@@ -5,10 +5,10 @@ export const FutureOpportunities = () => {
   const nextSteps = [
     {
       title: "Final Year Project (PFE)",
-      timeline: "2025-2026",
-      focus: "AI & Machine Learning Research",
+      timeline: "February 2026 - June 2026",
+      focus: "AI & Machine Learning Project",
       description: "Seeking challenging final year project opportunities in artificial intelligence, focusing on practical applications of ML algorithms in real-world scenarios.",
-      interests: ["Computer Vision", "Natural Language Processing", "Optimization Algorithms", "Data Mining"]
+      interests: ["Data Science", "AI Engineering", "Data Engineering", "Machine Learning", "Computer Vision", "Optimisation Algorithmes", "MLOps"]
     }
   ];
 
@@ -38,7 +38,7 @@ export const FutureOpportunities = () => {
             Future Opportunities
           </h2>
           <p className="text-slate-400 text-lg max-w-3xl mx-auto">
-            Looking ahead: My next academic milestones and professional aspirations. 
+            Looking ahead: My next academic milestones and professional aspirations.
             Let's build something intelligent together.
           </p>
         </div>
@@ -50,14 +50,14 @@ export const FutureOpportunities = () => {
               <Rocket className="w-6 h-6 text-amber-400" />
               Next Academic Milestone
             </h3>
-            
+
             {nextSteps.map((step, index) => (
               <div
                 key={index}
                 className="relative bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/30 p-8 group hover:border-amber-400/30 transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-600/5 to-orange-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 <div className="relative">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-xl font-bold text-white">{step.title}</h4>
@@ -65,10 +65,10 @@ export const FutureOpportunities = () => {
                       {step.timeline}
                     </span>
                   </div>
-                  
+
                   <p className="text-amber-300 font-medium mb-3">{step.focus}</p>
                   <p className="text-slate-300 leading-relaxed mb-6">{step.description}</p>
-                  
+
                   <div className="space-y-3">
                     <h5 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Areas of Interest:</h5>
                     <div className="flex flex-wrap gap-2">
@@ -93,7 +93,7 @@ export const FutureOpportunities = () => {
               <Users className="w-6 h-6 text-orange-400" />
               Collaboration Opportunities
             </h3>
-            
+
             <div className="space-y-6">
               {collaborationAreas.map((area, index) => (
                 <div
@@ -117,10 +117,10 @@ export const FutureOpportunities = () => {
         <div className="text-center bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-3xl border border-slate-600/30 p-12">
           <h3 className="text-3xl font-bold text-white mb-4">Ready to Collaborate?</h3>
           <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-            I'm actively seeking opportunities for my final year project (PFE) and future collaborations. 
+            I'm actively seeking opportunities for my final year project (PFE) and future collaborations.
             Let's discuss how we can create something innovative together.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="#contact"
@@ -130,9 +130,9 @@ export const FutureOpportunities = () => {
               Contact Me
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
-            
+
             <div className="text-slate-400 text-sm">
-              Available for PFE projects starting 2025
+              Available for PFE projects starting 2026 ( February)
             </div>
           </div>
         </div>

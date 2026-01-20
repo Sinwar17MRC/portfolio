@@ -13,7 +13,14 @@ export const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! I'll get back to you soon.");
+
+    // Construct mailto link
+    const mailtoLink = `mailto:imad37.bziz@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Message from: ${formData.name} (${formData.email})\n\n${formData.message}`)}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
+
+    toast.success("Opening your email client...");
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -142,19 +149,21 @@ export const Contact = () => {
                   <div>
                     <h4 className="text-white font-semibold mb-1">Phone</h4>
                     <p className="text-gray-300">06 24 95 72 50</p>
-                    <p className="text-gray-400 text-sm">Mon-Fri, 9am-6pm</p>
+                    <p className="text-gray-400 text-sm">24/7 available</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Social Links */}
+            {/* Social Links Updated: GitHub replaced by Gmail */}
             <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-8">
               <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
 
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/imad-bziz-97aa80285/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 bg-gradient-to-r from-blue-600/20 to-blue-600/10 border border-blue-400/30 rounded-lg p-4 text-blue-400 hover:from-blue-600/30 hover:to-blue-600/20 transition-all duration-300 flex-1"
                 >
                   <Linkedin size={24} />
@@ -162,11 +171,11 @@ export const Contact = () => {
                 </a>
 
                 <a
-                  href="#"
-                  className="flex items-center gap-3 bg-gradient-to-r from-gray-600/20 to-gray-600/10 border border-gray-400/30 rounded-lg p-4 text-gray-400 hover:from-gray-600/30 hover:to-gray-600/20 transition-all duration-300 flex-1"
+                  href="mailto:imad37.bziz@gmail.com"
+                  className="flex items-center gap-3 bg-gradient-to-r from-red-600/20 to-red-600/10 border border-red-400/30 rounded-lg p-4 text-red-400 hover:from-red-600/30 hover:to-red-600/20 transition-all duration-300 flex-1"
                 >
-                  <Github size={24} />
-                  <span className="font-medium">GitHub</span>
+                  <Mail size={24} />
+                  <span className="font-medium">Gmail</span>
                 </a>
               </div>
 

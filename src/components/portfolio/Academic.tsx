@@ -1,4 +1,3 @@
-
 const academicMilestones = [
   {
     year: "Sept 2023 – Juin 2026",
@@ -6,17 +5,25 @@ const academicMilestones = [
     institution: "École Mohammadia des Ingénieurs (EMI)",
     description: "Formation d'ingénieur d'état avec spécialisation en Data Science et Intelligence Artificielle.",
     highlight: true,
-    skills: ["Data Science", "Machine Learning", "Scientific Computing", "Mathematics"]
+    skills: ["Data Science", "Machine Learning", "Intelligence Artificielle", "Calcul Scientifique"]
+  },
+  {
+    year: "Sept 2021 – Juin 2023",
+    title: "Classes Préparatoires (MPSI/MP)",
+    institution: "Centre Omar Ibn Al Khattab, Casablanca",
+    description: "CPGE aux grandes écoles d'ingénieurs, filière Mathématiques et Physique.",
+    highlight: false,
+    skills: ["Mathématiques", "Physique", "Informatique", "Sciences de l'Ingénieur"]
   }
 ];
 
 const keyCoursework = [
-  { name: "Machine Learning Algorithms", progress: 90 },
-  { name: "Deep Neural Networks", progress: 85 },
-  { name: "Optimization Theory", progress: 88 },
-  { name: "Statistical Analysis", progress: 92 },
-  { name: "Database Management", progress: 95 },
-  { name: "Software Engineering", progress: 90 }
+  { name: "Machine Learning Algorithms", subgroup: "Intelligence Artificielle" },
+  { name: "Deep Neural Networks", subgroup: "Intelligence Artificielle" },
+  { name: "Optimization Theory", subgroup: "Mathématiques" },
+  { name: "Statistical Analysis", subgroup: "Mathématiques" },
+  { name: "Database Management", subgroup: "Informatique" },
+  { name: "Software Engineering", subgroup: "Informatique" }
 ];
 
 export const Academic = () => {
@@ -44,12 +51,12 @@ export const Academic = () => {
                   <div key={index} className="relative flex items-start">
                     {/* Timeline Dot */}
                     <div className={`absolute left-6 w-4 h-4 rounded-full border-2 ${milestone.highlight
-                        ? 'bg-gradient-to-r from-blue-400 to-purple-400 border-white'
-                        : 'bg-slate-800 border-gray-400'
+                      ? 'bg-gradient-to-r from-blue-400 to-purple-400 border-white'
+                      : 'bg-slate-800 border-gray-400'
                       }`}></div>
 
                     {/* Content */}
-                    <div className="ml-16 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-6 hover:transform hover:scale-105 transition-all duration-300">
+                    <div className="ml-16 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/10">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
                         <h3 className={`text-xl font-bold ${milestone.highlight ? 'text-blue-400' : 'text-white'
                           }`}>
@@ -85,40 +92,38 @@ export const Academic = () => {
             </div>
           </div>
 
-          {/* Key Coursework */}
+          {/* Key Coursework - Redesigned without Progress Bars */}
           <div className="lg:col-span-1">
-            <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-6 sticky top-24">
-              <h3 className="text-2xl font-bold text-white mb-6">Matières Clés</h3>
+            <div className="bg-slate-800/20 backdrop-blur-md rounded-[2rem] border border-slate-700/40 p-8 sticky top-24">
+              <h3 className="text-2xl font-black text-white mb-8 flex items-center gap-3">
+                <div className="w-2 h-8 bg-blue-500 rounded-full"></div>
+                Matières Clés
+              </h3>
 
-              <div className="space-y-4">
+              <div className="grid gap-4">
                 {keyCoursework.map((course) => (
-                  <div key={course.name}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300 font-medium text-sm">
+                  <div
+                    key={course.name}
+                    className="group relative p-4 rounded-xl bg-slate-900/40 border border-slate-700/30 hover:border-blue-500/30 hover:bg-slate-900/60 transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-slate-200 font-bold group-hover:text-blue-300 transition-colors">
                         {course.name}
                       </span>
-                      <span className="text-blue-400 font-semibold text-sm">
-                        {course.progress}%
-                      </span>
                     </div>
-
-                    <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-blue-400 to-purple-400 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${course.progress}%` }}
-                      >
-                        <div className="h-full bg-white/20 animate-pulse"></div>
-                      </div>
+                    <div className="text-[10px] text-slate-500 uppercase tracking-widest font-black">
+                      {course.subgroup}
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Current Status */}
-              <div className="mt-8 p-4 bg-gradient-to-r from-green-600/10 to-emerald-600/10 rounded-xl border border-green-400/20">
-                <h4 className="text-lg font-semibold text-green-400 mb-2">Statut Actuel</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Fin de 2ème année - Spécialisation en Data Science & IA.
+              <div className="mt-10 p-5 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 rounded-2xl border border-blue-400/20 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                <h4 className="text-lg font-bold text-blue-400 mb-2 relative z-10">Statut Actuel</h4>
+                <p className="text-gray-300 text-sm leading-relaxed relative z-10">
+                  <span className="font-bold text-white">3ème année d'ingénierie</span>. Spécialisation <span className="text-blue-300">AI & Business Intelligence</span>. Recherche active de stage PFE (Février 2026).
                 </p>
               </div>
             </div>

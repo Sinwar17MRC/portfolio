@@ -1,10 +1,10 @@
 
 import { useEffect, useState } from 'react';
-import { ChevronDown, Linkedin, Github, MessageCircle } from 'lucide-react';
+import { ChevronDown, Linkedin, Mail, MessageCircle, FileText } from 'lucide-react';
 
 export const Hero = () => {
   const [text, setText] = useState('');
-  const fullText = "Ingénieur en fin de formation à l’EMI | Python & IA Générative";
+  const fullText = "Ingénieur en fin de formation à l'EMI | AI Data & Business Intelligence";
 
   useEffect(() => {
     let i = 0;
@@ -23,9 +23,10 @@ export const Hero = () => {
   const roles = [
     "Data Scientist",
     "AI Engineer",
-    "Backend Developer",
-    "MLOps Engineer",
-    "Generative AI Specialist"
+    "Data Analytics",
+    "MLOps Enthusiast",
+    "Data Engineering Enthusiast",
+    "Machine Learning"
   ];
 
   return (
@@ -144,27 +145,24 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* 3D Rotating Text Animation - repositioned and resized */}
-          <div className="relative h-14 mb-12 perspective-1000">
-            <div className="rotating-text-container">
-              {roles.map((role, index) => {
-                const totalItems = roles.length;
-                const angle = (index * 360) / totalItems;
-
-                return (
-                  <div
-                    key={index}
-                    className="rotating-text-item text-xs md:text-sm"
-                    style={{
-                      '--rotation': `${angle}deg`,
-                      animationDelay: `${index * -8}s`
-                    } as React.CSSProperties}
-                  >
-                    {role}
-                  </div>
-                );
-              })}
+          {/* Horizontal Reel - Seamless Ribbon */}
+          <div className="relative w-full h-14 mb-8 mt-4 ribbon-wrap">
+            {/* The Infinite Ribbon */}
+            <div className="flex animate-scroll-reel whitespace-nowrap gap-16 items-center h-full">
+              {[...roles, ...roles].map((role, index) => (
+                <div
+                  key={index}
+                  className="ticker-item flex items-center gap-3 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-amber-400/90 bg-slate-800/60 px-5 py-2 rounded-full border border-amber-500/20 backdrop-blur-md transition-all hover:border-amber-400/50 hover:bg-slate-700/60"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.8)] animate-pulse"></span>
+                  {role}
+                </div>
+              ))}
             </div>
+
+            {/* Interior Curve Vignette Masks */}
+            <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-slate-900 via-slate-900/40 to-transparent z-10 pointer-events-none"></div>
           </div>
 
           {/* Call to action button */}
@@ -183,10 +181,25 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Social Media Bubbles */}
+      {/* Resume Bubble - Left Side */}
+      <div className="absolute bottom-8 left-8 z-20">
+        <a
+          href="/assets/docs/cv__imad.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-amber-500/25"
+        >
+          <FileText className="w-6 h-6 text-white" />
+          <div className="absolute left-14 top-1/2 -translate-y-1/2 bg-slate-800 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            View Resume
+          </div>
+        </a>
+      </div>
+
+      {/* Social Media Bubbles - Right Side */}
       <div className="absolute bottom-8 right-8 flex flex-col gap-4 z-20">
         <a
-          href="https://linkedin.com/in/bziz-imad"
+          href="https://www.linkedin.com/in/imad-bziz-97aa80285/"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
@@ -198,14 +211,12 @@ export const Hero = () => {
         </a>
 
         <a
-          href="https://github.com/bziz-imad"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative w-12 h-12 bg-gradient-to-r from-slate-700 to-slate-800 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-slate-500/25"
+          href="mailto:imad37.bziz@gmail.com"
+          className="group relative w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-red-500/25"
         >
-          <Github className="w-6 h-6 text-white" />
+          <Mail className="w-6 h-6 text-white" />
           <div className="absolute right-14 top-1/2 -translate-y-1/2 bg-slate-800 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-            GitHub
+            Email Me
           </div>
         </a>
 
@@ -224,3 +235,5 @@ export const Hero = () => {
     </section>
   );
 };
+
+
