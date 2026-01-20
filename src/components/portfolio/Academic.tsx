@@ -29,7 +29,7 @@ const keyCoursework = [
 export const Academic = () => {
   return (
     <section id="academic" className="relative py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[90rem] mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Parcours Académique

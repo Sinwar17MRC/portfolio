@@ -110,7 +110,7 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="relative py-24 px-4 bg-slate-900/50">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[90rem] mx-auto">
         <div className="text-center mb-16 relative">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Featured Projects
@@ -126,7 +126,7 @@ export const Projects = () => {
             loop: true,
             dragFree: true,
           }}
-          className="w-full max-w-6xl mx-auto relative"
+          className="w-full max-w-7xl mx-auto relative"
         >
           <CarouselContent className="-ml-2 md:-ml-4 pb-12">
             {projects.map((project, index) => (

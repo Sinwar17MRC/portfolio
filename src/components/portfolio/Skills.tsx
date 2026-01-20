@@ -64,7 +64,7 @@ export const Skills = () => {
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-[90rem] mx-auto relative z-10">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tight">
             Technical <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">Arsenal</span>
@@ -129,7 +129,7 @@ export const Skills = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.1),transparent_40%)]"></div>
               </div>
 
-              <div className="relative z-10 w-full max-w-3xl">
+              <div className="relative z-10 w-full max-w-5xl">
                 <div className="flex items-center gap-4 mb-12">
                   <div className={`h-10 w-1 bg-gradient-to-b ${skillCategories[activeCategory].color} rounded-full`}></div>
                   <div>
@@ -166,7 +166,7 @@ export const Skills = () => {
               </div>
 
               {/* Action Hint */}
-              <div className="mt-16 pt-8 border-t border-slate-700/30 w-full max-w-3xl flex justify-between items-center text-slate-500 text-xs font-bold uppercase tracking-widest">
+              <div className="mt-16 pt-8 border-t border-slate-700/30 w-full max-w-5xl flex justify-between items-center text-slate-500 text-xs font-bold uppercase tracking-widest">
                 <div className="flex items-center gap-2">
                   <Layers size={14} />
                   Continuous Learning Ecosystem

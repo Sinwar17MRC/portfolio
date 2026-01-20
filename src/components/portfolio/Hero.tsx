@@ -1,6 +1,7 @@
 
-import { useEffect, useState } from 'react';
-import { ChevronDown, Linkedin, Mail, MessageCircle, FileText } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ChevronDown, FileText, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { ParticleField } from './ParticleField';
 
 export const Hero = () => {
   const [text, setText] = useState('');
@@ -31,62 +32,65 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-slate-900">
-      {/* Background stays strictly behind */}
-      <div className="absolute inset-0 bg-slate-900 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-600/10 via-orange-600/5 to-slate-900 opacity-50"></div>
-        <svg className="w-full h-full object-cover opacity-10" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <g className="animate-pulse">
-            {Array.from({ length: 30 }).map((_, i) => (
-              <circle key={i} cx={Math.random() * 1200} cy={Math.random() * 800} r="1" fill="#fbbf24" />
-            ))}
-          </g>
-        </svg>
+      {/* Consistent Animated Background */}
+      <ParticleField />
+
+      {/* Background Gradients */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-600/10 via-orange-600/5 to-slate-900"></div>
       </div>
 
-      {/* Content Container - Centered Stack */}
-      <div className="relative z-10 w-full max-w-[100vw] flex flex-col items-center justify-center px-4 text-center">
+      {/* Content Container - Stretched Vertically */}
+      <div className="relative z-10 w-full max-w-[100vw] flex flex-col items-center justify-between h-full py-28 md:py-30 px-4 text-center">
 
-        {/* Name - Scaled for mobile */}
-        <h1 className="text-[2.5rem] sm:text-6xl md:text-8xl font-black mb-4 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent leading-none tracking-tighter uppercase w-full">
-          BZIZ IMAD
-        </h1>
+        <div className="flex flex-col items-center justify-center flex-1 w-full space-y-16 md:space-y-12">
+          {/* Name - Larger & Spaced */}
+          <div className="space-y-8 w-full">
+            <h1 className="text-[2.8rem] sm:text-7xl md:text-9xl font-black bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent leading-none tracking-tighter uppercase w-full">
+              BZIZ IMAD
+            </h1>
 
-        {/* Tagline - Better mobile wrapping */}
-        <p className="text-xs sm:text-lg md:text-xl text-slate-300 font-medium max-w-[85%] sm:max-w-2xl mx-auto mb-8 min-h-[2.5rem] leading-relaxed">
-          {text}<span className="inline-block w-0.5 h-4 md:h-6 bg-amber-400 ml-0.5 animate-pulse"></span>
-        </p>
-
-        {/* Location & School - Stacked on tiny screens */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-8 w-full">
-          <div className="bg-slate-800/80 px-3 py-1 rounded-full border border-amber-500/20 text-[9px] sm:text-sm text-slate-400 flex items-center">
-            <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2"></div>
-            Rabat, Maroc
+            {/* Tagline - Better mobile wrapping */}
+            <p className="text-sm sm:text-xl md:text-2xl text-slate-300 font-medium max-w-[95%] sm:max-w-5xl mx-auto min-h-[3rem] leading-relaxed">
+              {text}<span className="inline-block w-0.5 h-6 md:h-10 bg-amber-400 ml-1 animate-pulse align-middle"></span>
+            </p>
           </div>
-          <div className="bg-slate-800/80 px-3 py-1 rounded-full border border-amber-500/20 text-[9px] sm:text-sm text-slate-300 font-bold">
-            École Mohammadia des Ingénieurs
+
+          {/* Location & School - Premium Spacing */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-10 w-full">
+            <div className="bg-slate-800/80 px-6 py-2 rounded-full border border-amber-500/20 text-xs sm:text-base text-slate-400 flex items-center shadow-2xl backdrop-blur-md">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
+              Rabat, Maroc
+            </div>
+            <div className="hidden sm:block w-2 h-2 bg-slate-700 rounded-full"></div>
+            <div className="bg-slate-800/80 px-6 py-2 rounded-full border border-amber-500/20 text-xs sm:text-base text-slate-300 font-bold shadow-2xl backdrop-blur-md">
+              École Mohammadia des Ingénieurs
+            </div>
+          </div>
+
+          {/* Ticker - Strictly clipped with more visual weight */}
+          <div className="w-full max-w-4xl mx-auto overflow-hidden h-10 sm:h-16 ribbon-wrap">
+            <div className="flex animate-scroll-reel whitespace-nowrap items-center h-full gap-12 sm:gap-24">
+              {[...roles, ...roles, ...roles].map((role, index) => (
+                <div key={index} className="flex items-center gap-4 text-[10px] sm:text-sm font-bold uppercase tracking-[0.3em] text-amber-500/80">
+                  <div className="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
+                  {role}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Ticker - Strictly clipped */}
-        <div className="w-full max-w-lg mx-auto overflow-hidden h-8 sm:h-12 ribbon-wrap mb-10">
-          <div className="flex animate-scroll-reel whitespace-nowrap items-center h-full gap-8 sm:gap-16">
-            {[...roles, ...roles].map((role, index) => (
-              <div key={index} className="flex items-center gap-2 text-[8px] sm:text-xs font-bold uppercase tracking-widest text-amber-500/80">
-                <div className="w-1 h-1 rounded-full bg-amber-500"></div>
-                {role}
-              </div>
-            ))}
-          </div>
+        {/* Journey Link - Pushed Lower */}
+        <div className="pt-20 pb-28 sm:pb-0">
+          <a
+            href="#about"
+            className="group bg-gradient-to-r from-amber-600 to-orange-600 px-6 py-3 sm:px-15 sm:py-4 rounded-full text-[10px] sm:text-lg font-black text-white flex items-center gap-3 hover:scale-105 transition-all shadow-[0_0_40px_rgba(245,158,11,0.2)]"
+          >
+            EXPLORE MY JOURNEY
+            <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce group-hover:text-amber-200" />
+          </a>
         </div>
-
-        {/* Journey Link */}
-        <a
-          href="#about"
-          className="bg-gradient-to-r from-amber-600 to-orange-600 px-6 sm:px-10 py-3 sm:py-4 rounded-full text-[10px] sm:text-base font-black text-white flex items-center gap-2 hover:scale-105 transition-all shadow-xl"
-        >
-          EXPLORE JOURNEY
-          <ChevronDown size={16} className="animate-bounce" />
-        </a>
       </div>
 
       {/* Functional Social Icons - Compact for Mobile */}

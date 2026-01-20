@@ -71,7 +71,7 @@ export const Navigation = () => {
       <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-r from-transparent via-amber-400/30 to-transparent blur-xl"></div>
       <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-r from-transparent via-amber-500/20 to-transparent blur-2xl"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-10 lg:px-20">
         <div className="flex justify-between items-center py-4">
           <div className="text-xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent">
             BZIZ IMAD

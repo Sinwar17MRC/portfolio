@@ -32,7 +32,7 @@ export const FutureOpportunities = () => {
 
   return (
     <section id="opportunities" className="relative py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
             Future Opportunities

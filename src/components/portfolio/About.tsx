@@ -5,7 +5,7 @@ import { Briefcase, Target, Rocket, Telescope } from "lucide-react";
 export const About = () => {
   return (
     <section id="about" className="relative py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-amber-600/10 to-orange-600/10 blur-3xl rounded-3xl"></div>
