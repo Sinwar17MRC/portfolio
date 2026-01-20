@@ -99,6 +99,13 @@
 
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  html {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 
@@ -161,17 +168,32 @@ section h4,
 .ribbon-wrap {
   position: relative;
   overflow: hidden;
-  /* Extreme radial mask for hyper-circular fall-off */
-  mask-image: radial-gradient(ellipse 50% 120% at center,
+  /* Responsive radial mask: wider on mobile, tighter on desktop */
+  mask-image: radial-gradient(ellipse 85% 120% at center,
       black 0%,
-      black 20%,
-      rgba(0, 0, 0, 0.4) 70%,
+      black 40%,
+      rgba(0, 0, 0, 0.4) 80%,
       transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 50% 120% at center,
+  -webkit-mask-image: radial-gradient(ellipse 85% 120% at center,
       black 0%,
-      black 20%,
-      rgba(0, 0, 0, 0.4) 70%,
+      black 40%,
+      rgba(0, 0, 0, 0.4) 80%,
       transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .ribbon-wrap {
+    mask-image: radial-gradient(ellipse 50% 120% at center,
+        black 0%,
+        black 20%,
+        rgba(0, 0, 0, 0.4) 70%,
+        transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 50% 120% at center,
+        black 0%,
+        black 20%,
+        rgba(0, 0, 0, 0.4) 70%,
+        transparent 100%);
+  }
 }
 
 .ribbon-wrap::before {
